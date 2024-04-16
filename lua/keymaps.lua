@@ -49,12 +49,13 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- WARN: custom parts here!
-
+-- INFO: TermToggle
 vim.keymap.set('n', '<leader>t', function()
   vim.cmd 'cd %:p:h'
   vim.cmd 'terminal'
   vim.cmd 'startinsert'
 end)
+-- INFO: barbar
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
