@@ -3,10 +3,11 @@ return {
   dependencies = { 'neovim/nvim-lspconfig', 'nvim-telescope/telescope.nvim', 'mfussenegger/nvim-dap-python' },
   opts = {
     -- Your options go here
-    -- name = 'venv_*',
+    name = 'venv_\\w',
+    -- search = true,
     -- auto_refresh = false,
     search_venv_managers = false,
-    path = '~/venvs/',
+    path = '~/venvs',
     -- set parents to 0 so that it only looks in the ~/venvs/ folder!
     parents = 0,
   },

@@ -1,3 +1,4 @@
+-- blatantly copy-pasted from LazyVim's alpha.lua, after also adding persistence.lua from util.lua
 return {
 
   { 'nvimdev/dashboard-nvim', enabled = false },
@@ -22,7 +23,7 @@ return {
       dashboard.section.header.val = vim.split(logo, '\n')
       -- stylua: ignore
       dashboard.section.buttons.val = {
-        dashboard.button("f", " " .. " Find file",       "<cmd> Telescope find_files <cr>"),
+        dashboard.button("f", " " .. " Find file",       "<cmd> Telescope find_files <cr>"),
         dashboard.button("n", " " .. " New file",        "<cmd> ene <BAR> startinsert <cr>"),
         dashboard.button("r", " " .. " Recent files",    "<cmd> Telescope oldfiles <cr>"),
         dashboard.button("g", " " .. " Find text",       "<cmd> Telescope live_grep <cr>"),

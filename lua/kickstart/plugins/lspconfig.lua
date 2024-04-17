@@ -147,7 +147,30 @@ return {
         -- But for many setups, the LSP (`tsserver`) will work just fine
         -- tsserver = {},
         --
-
+        -- pylsp = {
+        --   pylsp = {
+        --     settings = {
+        --       plugins = {
+        --         flake8 = {
+        --           enabled = false,
+        --           -- ignore = { 'E501', 'E231' },
+        --           -- maxLineLength = 88,
+        --         },
+        --         black = { enabled = true },
+        --         autopep8 = { enabled = false },
+        --         mccabe = { enabled = false },
+        --         pycodestyle = {
+        --           enabled = false,
+        --           -- ignore = { 'E501', 'E231' },
+        --           maxLineLength = 88,
+        --         },
+        --         pyflakes = { enabled = false },
+        --         pylint = { enabled = false },
+        --       },
+        --     },
+        --   },
+        -- },
+        -- ruff_lsp = {},
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
@@ -181,6 +204,12 @@ return {
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
       require('mason-lspconfig').setup {
+        ensure_installed = {
+          'lua_ls',
+          -- 'pylsp',
+          'ruff_lsp',
+        },
+
         handlers = {
           function(server_name)
             local server = servers[server_name] or {}
