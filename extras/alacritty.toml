@@ -1,0 +1,4 @@
+[shell]
+program = "/bin/fish"
+[env]
+term = "xterm-256color"
